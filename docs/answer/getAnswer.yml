@@ -1,0 +1,182 @@
+/api/v1/questions/getOptions/1:
+  get:
+    tags:
+      - Answer
+    security:
+      - bearerAuth: []
+    description: Listar Respuestas.
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+                options:
+                  type: array
+            example:
+              {
+                "state": true,
+                "message": "Listado de opciones",
+                "options": [
+                  {
+            "id": 4,
+            "opcion": "esta es correcta"
+        },
+        {
+            "id": 6,
+            "opcion": "incorrecta"
+        },
+        {
+            "id": 5,
+            "opcion": "incorrecta"
+        },
+        {
+            "id": 7,
+            "opcion": "incorrecta"
+        },
+        {
+            "id": 11,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 12,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 13,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 77,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 14,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 15,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 16,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 17,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 80,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 20,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 23,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 26,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 29,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 83,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 32,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 35,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 38,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 41,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 86,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 44,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 47,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 50,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 53,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 89,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 56,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 59,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 62,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 65,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 92,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 68,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 71,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 74,
+            "opcion": "Teamo"
+        },
+        {
+            "id": 10,
+            "opcion": "TE AMO MUCHO MI VIDA"
+        },
+        {
+            "id": 95,
+            "opcion": "Teamo"
+        }
+        ]
+              }

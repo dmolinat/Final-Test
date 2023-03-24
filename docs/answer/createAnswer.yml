@@ -1,0 +1,45 @@
+/api/v1/answer/create:
+  post:
+    tags:
+      - Answer
+    security:
+      - bearerAuth: []
+    description: Crear Respuesta.
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              opcion:
+                type: string
+              is_correct:
+                type: string
+              question_id:
+                type: integer
+              state:
+                type: boolean
+          example:
+            {
+              "opcion": "Teamo",
+              "is_correct": true,
+              "question_id": 2,
+              "state": true
+            }
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+            example:
+              {
+                "state": true,
+                "message": "Pregunta creada exitosamente"
+              }

@@ -1,0 +1,37 @@
+/api/v1/questions/updateQuestion/2:
+  put:
+    tags:
+      - Question
+    security: []
+    description: Crear pregunta.
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              questions:
+                type: string
+              options:
+                type: array
+          example:
+            {
+              "question": "P18: LA MAS DIFICIL",
+            }
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+            example:
+              {
+                "state": true,
+                "message": "Pregunta Editada con exito"
+              }

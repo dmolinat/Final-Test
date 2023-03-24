@@ -1,0 +1,46 @@
+/api/v1/user/getUser/1:
+  get:
+    tags:
+      - User
+    security:
+    - bearerAuth: []
+    description: Listar un usuario.
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: array
+              properties:
+                first_name:
+                  type: string
+                second_name:
+                  type: string
+                surname:
+                  type: string
+                second_sur_name:
+                  type: string
+                type_document:
+                  type: integer
+                document_number:
+                  type: string
+                email:
+                  type: string
+                phone:
+                  type: string
+            example:
+                [
+                  {
+        "first_name": "Mi",
+        "second_name": "A",
+        "surname": "Mor",
+        "second_sur_name": "jsjsj",
+        "type_document": 2,
+        "document_number": "8",
+        "email": "8@hotma.co",
+        "phone": "8"
+        }
+                ]

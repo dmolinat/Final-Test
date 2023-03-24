@@ -32,13 +32,13 @@ Route.group(()=>{
   }).prefix('answer')
 
   Route.post('/login','UsersController.login')
+
   Route.group(()=>{
-    Route.post('/create', 'UsersController.createUser');
+    Route.post('/create', 'UsersController.createUser')
     Route.get('/getUsers', 'UsersController.getUsers').middleware('admin')
     Route.put('/update/:id_user', 'UsersController.updateUser')
     Route.get('/getUser/:id_user', 'UsersController.getUser').middleware('admin')
   }).prefix('user')
-
   Route.group(()=>{
     Route.get('/getquestions', 'FormsController.getQuestions');
     Route.post('/postquestions', 'FormsController.postQuestions');

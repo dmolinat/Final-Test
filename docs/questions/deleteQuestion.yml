@@ -1,0 +1,25 @@
+/api/v1/questions/deleteQuestion/1:
+  delete:
+    tags:
+      - Question
+    security: []
+    description: Eliminar pregunta. Asegurese de crear una pregunta primero
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+            example:
+              {
+                "state": true,
+                "message": "Pregunta Eliminada con exito"
+              }

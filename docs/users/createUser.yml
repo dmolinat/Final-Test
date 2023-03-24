@@ -1,0 +1,59 @@
+/api/v1/user/create:
+  post:
+    tags:
+      - User
+    security: []
+    description: Registrar usuario
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              firstName:
+                type: string
+              secondName:
+                type: string
+              surname:
+                type: string
+              secondSurName:
+                type: string
+              typeDocument:
+                type: string
+              documentNumber:
+                type: integer
+              email:
+                type: string
+              password:
+                type: string
+              phone:
+                type: string
+          example:
+            {
+              "firstName": "Mi",
+              "secondName": "A",
+              "surname": "Mor",
+              "secondSurName": "jsjsj",
+              "typeDocument": 1,
+              "documentNumber": "100",
+              "email": "100@hotma.co",
+              "password": "123456",
+              "phone": "100"
+            }
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+            example:
+              {
+                "state": true,
+                "message": "Estudiante creado exitosamente"
+              }

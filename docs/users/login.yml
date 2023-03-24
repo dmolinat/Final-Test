@@ -1,0 +1,50 @@
+/api/v1/login:
+  post:
+    tags:
+      - User
+    security: []
+    description: Login de usuarios
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+          example:
+            {
+              "email": "18@hotma.co",
+              "password": "123456"
+            }
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                  state:
+                    type: boolean
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  role:
+                    type: string
+                  message:
+                    type: string
+                  token:
+                    type: string
+            example:
+              {
+                "state": true,
+                "id": 3,
+                "name": "TE AMO AASDAHSDHAS Mor jsjsj",
+                "role": "administrador",
+                "msg": "Ingreso exitoso",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmVzIjoiVEUgQU1PIiwiaWQiOjMsImNlZHVsYSI6IjE4MDIiLCJpYXQiOjE2Nzk2MTkyMzQsImV4cCI6MTY3OTYyMTAzNH0.DpOs-OQe2c29jkmML9uardYQDA_L8EigrlIfTFYnIw0"
+              }

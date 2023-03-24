@@ -1,0 +1,150 @@
+/api/v1/user/getUsers:
+  get:
+    tags:
+      - User
+    security:
+    - bearerAuth: []
+    description: Listar usuarios
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+                users:
+                  type: array
+            example:
+              {
+                "state": true,
+                "message": "Listado de estudiantes",
+                "users": [
+                  {
+                    "first_name": "Mi",
+                    "second_name": "A",
+                    "surname": "Mor",
+            "second_sur_name": "jsjsj",
+            "type_document": 1,
+            "document_number": "18",
+            "email": "18@hotma.co",
+            "phone": "18"
+        },
+        {
+            "first_name": "Mi",
+            "second_name": "A",
+            "surname": "Mor",
+            "second_sur_name": "jsjsj",
+            "type_document": 1,
+            "document_number": "1802",
+            "email": "1802@hotma.co",
+            "phone": "1802"
+        },
+        {
+            "first_name": "T",
+            "second_name": "E",
+            "surname": "S",
+            "second_sur_name": "T",
+            "type_document": 1,
+            "document_number": "999",
+            "email": "999@hotma.co",
+            "phone": "999"
+        },
+        {
+            "first_name": "T",
+            "second_name": "E",
+            "surname": "S",
+            "second_sur_name": "T",
+            "type_document": 1,
+            "document_number": "1036",
+            "email": "1036@hotma.co",
+            "phone": "1036"
+        },
+        {
+            "first_name": "T",
+            "second_name": "E",
+            "surname": "S",
+            "second_sur_name": "T",
+            "type_document": 1,
+            "document_number": "612",
+            "email": "612@hotma.co",
+            "phone": "612"
+        },
+        {
+            "first_name": "T",
+            "second_name": "E",
+            "surname": "S",
+            "second_sur_name": "T",
+            "type_document": 1,
+            "document_number": "579",
+            "email": "579@hotma.co",
+            "phone": "579"
+        },
+        {
+            "first_name": "T",
+            "second_name": "E",
+            "surname": "S",
+            "second_sur_name": "T",
+            "type_document": 1,
+            "document_number": "418",
+            "email": "418@hotma.co",
+            "phone": "418"
+        },
+        {
+            "first_name": "T",
+            "second_name": "E",
+            "surname": "S",
+            "second_sur_name": "T",
+            "type_document": 1,
+            "document_number": "859",
+            "email": "859@hotma.co",
+            "phone": "859"
+        },
+        {
+            "first_name": "T",
+            "second_name": "E",
+            "surname": "S",
+            "second_sur_name": "T",
+            "type_document": 1,
+            "document_number": "965",
+            "email": "965@hotma.co",
+            "phone": "965"
+        },
+        {
+            "first_name": "Mi",
+            "second_name": "A",
+            "surname": "Mor",
+            "second_sur_name": "jsjsj",
+            "type_document": 1,
+            "document_number": "22",
+            "email": "22@hotma.co",
+            "phone": "22"
+        },
+        {
+            "first_name": "T",
+            "second_name": "E",
+            "surname": "S",
+            "second_sur_name": "T",
+            "type_document": 1,
+            "document_number": "157",
+            "email": "157@hotma.co",
+            "phone": "157"
+        },
+        {
+            "first_name": "Mi",
+            "second_name": "A",
+            "surname": "Mor",
+            "second_sur_name": "jsjsj",
+            "type_document": 2,
+            "document_number": "8",
+            "email": "8@hotma.co",
+            "phone": "8"
+        }
+        ]
+              }

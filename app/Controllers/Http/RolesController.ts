@@ -12,7 +12,6 @@ export default class RolesController {
       await RolObj.save();
       return response.status(200).json({"state": true,"message": "Rol creado exitosamente"})
     }catch(e){
-      console.log(`e -> ${e}`)
       return response.status(500).json({"state": false, "message": "Error al crear Rol"})
     }
   }

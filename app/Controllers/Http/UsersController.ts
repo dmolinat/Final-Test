@@ -10,15 +10,14 @@ export default class UsersContUserler {
     const email = request.input('email')
     const password = request.input('password')
     try {
-      //consultar si existe usuario con ese correo
       const user = await User.findBy('email',email)
       if (!user) {
-        return response.status(400).json({state: false, message: "email invalido." })
+        throw Error('email no encontrado');
       }
 
       const validPassword = bcryptjs.compareSync(password, user.password)
       if (!validPassword) {
-        return response.status(400).json({ msj: 'Los datos de acceso no son correctos' })
+        throw Error('Contrasena invalida');
       }
 
       const payload ={
@@ -31,19 +30,20 @@ export default class UsersContUserler {
 
       const user_rol = await roles.findBy('id',user.rol_id)
       if(!user_rol){
-        return response.status(400).json({message: "ROL NOT FOUND"})
+        throw Error('Rol no encontrado');
       }
 
-      console.log(`token for test -> ${token}`)
       response.status(200).json({
         state: user.state,
         id: user.id,
         name: (user.first_name).concat(" ",user.second_name," ",user.surname," ",user.second_sur_name),
         role: user_rol.name,
         msg: "Ingreso exitoso",
+        token: token
       })
     } catch (error) {
-      response.json({state: false, message: "password or email invalid."})
+      console.log(`error -> ${error}`)
+      response.status(400).json({state: false, message: "password or email invalid."})
     }
   }
 
@@ -61,7 +61,6 @@ export default class UsersContUserler {
       }
     })
     return true
-
   }
 
   public async createUser({request, response}: HttpContextContract){
@@ -98,7 +97,6 @@ export default class UsersContUserler {
       const L_User = await User.query().select('first_name','second_name','surname','second_sur_name','type_document','document_number','email','phone').where({});
       return response.status(200).json({"state": true,"message": "Listado de estudiantes", "users": L_User})
     }catch(e){
-      console.log(`e-> ${e}`)
       return response.status(500).json({"state": false, "message": "Fallo en el listado de estudiantes"})
     }
   }

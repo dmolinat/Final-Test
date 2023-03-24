@@ -1,0 +1,2 @@
+Dura 30 dias. 2023-03-23
+sonar-scanner.bat -D"sonar.projectKey=20230322FinalTestv1.2" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=sqp_ebb070649ac3fb52cf173c2a60e5a0a39256d728"

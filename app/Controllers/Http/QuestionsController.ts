@@ -16,7 +16,6 @@ export default class QuestionsController {
       answerObj.createAnswerQuestion(questionObj.id,data_question.options)
       return response.status(200).json({"state": true,"message": "Pregunta creada exitosamente"})
     }catch(e){
-      console.log(`e -> ${e}`)
       return response.status(500).json({"state": false, "message": "Error al crear la pregunta"})
     }
   }

@@ -1,0 +1,39 @@
+/api/v1/questions/updateAnswer/28:
+  put:
+    tags:
+      - Answer
+    security:
+      - bearerAuth: []
+    description: Actualizar pregunta.
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              opcion:
+                type: string
+              iscorrect:
+                type: boolean
+          example:
+            {
+              "opcion": "TE AMO MUCHO MI VIDA",
+              "iscorrect": true
+            }
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+            example:
+              {
+                "state": true,
+                "message": "opcion Editada con exito"
+              }

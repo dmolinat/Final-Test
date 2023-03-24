@@ -1,0 +1,65 @@
+/api/v1/user/update/3:
+  put:
+    tags:
+      - User
+    security: []
+    description: Actualizacion de usuarios. No es necesario llenar todos los campos.
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              firstName:
+                type: string
+              secondName:
+                type: string
+              surname:
+                type: string
+              secondSurName:
+                type: string
+              typeDocument:
+                type: integer
+              documentNumber:
+                type: number
+              email:
+                type: string
+              password:
+                type: string
+              rolId:
+                type: integer
+              phone:
+                type: string
+              state:
+                type: boolean
+          example:
+            {
+              "firstName": "Mi",
+              "secondName": "A",
+              "surname": "Mor",
+              "secondSurName": "jsjsj",
+              "typeDocument": 1,
+              "documentNumber": "9999",
+              "email": "9999@hotma.co",
+              "password": "123456",
+              "rolId": 1,
+              "phone": "9999",
+              "state": false
+            }
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+            example:
+              {
+                "state": true,
+                "message": "Se actualizo correctamente"
+              }

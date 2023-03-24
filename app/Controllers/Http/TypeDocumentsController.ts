@@ -12,7 +12,6 @@ export default class TypeDocumentsController {
       await typeDocumentObj.save();
       return response.status(200).json({"state": true,"message": "Tipo documento creada exitosamente"})
     }catch(e){
-      console.log(`e -> ${e}`)
       return response.status(500).json({"state": false, "message": "Error al crear el tipo de documento"})
     }
   }

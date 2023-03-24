@@ -1,0 +1,38 @@
+/api/v1/form/postquestions:
+  post:
+    tags:
+      - Forms
+    security: []
+    description: Mandar respuestas de estudiantes..
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              estudianteId:
+                type: string
+              answers:
+                type: array
+          example:
+            {
+              "estudianteId": 1,
+              "answers": [4, 1, 3, 5]
+            }
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+            example:
+              {
+                "state": true,
+                "message": "Respuestas almacenadas con exito"
+              }
